@@ -42,6 +42,10 @@ Known pitfalls: never name a helper `g` (captions loop overwrites it); guard sca
 - Then `git mv queue/x.mp4 published/` is NOT needed — delete the MP4 from `queue/` in a follow-up commit to keep the repo small, and append the log row.
 - Description template: story recap → takeaway line → comment question 👇 → "Follow for more numbers that change how you spend." → ⚠️ assumptions + "This is not financial advice." → 5–7 hashtags ending in #shorts.
 
+## Series playlist
+- "Money Math: Who Wins? 💸" — playlist ID `PLNjse90ClRp4`. Add every new upload to it (Zapier YouTube "Add Video to Playlist",
+  or POST /youtube/v3/playlistItems via youtube_make_api_mutating_request). Playlists keep viewers watching the next Short.
+
 ## Analytics
 Saved Zapier skill **"channel rundown"** pulls channel totals, per-video stats and YouTube Analytics
 (views, engagedViews, averageViewDuration, averageViewPercentage). Analytics lag 24–48 h; say "not processed yet", not 0.
