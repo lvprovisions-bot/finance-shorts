@@ -44,6 +44,27 @@ Saved Zapier skill **"channel rundown"** pulls channel totals, per-video stats a
 (views, engagedViews, averageViewDuration, averageViewPercentage). Analytics lag 24–48 h; say "not processed yet", not 0.
 engagedViews ÷ views ≈ "stayed to watch".
 
+## Monetisation rules (YouTube Partner Program) — MUST follow
+Goal: stay eligible for YPP. Policy checked Oct 2026:
+- YouTube's "inauthentic content" policy (clarified 16 Jul 2026) refuses monetisation to channels with too much
+  **repetitive/generic content made easily with AI or templates with little variation between uploads**, or content
+  **lacking a narrative arc**. So every video must:
+  - have a real story/argument with a beginning, twist and payoff (two-character stories are ideal);
+  - be a **genuinely new idea** — never re-skin a previous video with swapped numbers;
+  - **vary the look**: rotate background palette, character designs/names, chart types and scene layouts so consecutive
+    uploads don't look like one template (check the last 3 videos in `published/log.csv` before designing);
+  - vary titles/description wording (no copy-paste boilerplate beyond the disclaimer).
+- **No AI personas of real people**, and no fake "expert" presenter giving finance advice. Characters are clearly fictional
+  cartoons; numbers are illustrations with stated assumptions. Never recommend specific stocks/products.
+- No distressing or manipulative "rage/shock bait"; hooks may surprise but must be truthful.
+- AI disclosure: the generic TTS narrator over cartoon graphics needs no "altered or synthetic" label. If a video ever uses
+  photorealistic AI imagery, a realistic human voice clone, or generative-AI music, set the altered/synthetic disclosure.
+- Never buy views/subscribers, use engagement pods, or delete-and-reupload to game the algorithm.
+- Max one upload per day.
+- Thresholds (for context in reports): YPP = 1,000 subs + 10M Shorts views/90 days (or 4,000 watch hours/yr);
+  from 1 Feb 2027 new applicants need 20M Shorts views/90 days (or 8,000 hours/yr). Fan-funding tier = 500 subs,
+  3 uploads in 90 days, 3M Shorts views/90 days.
+
 ## Rules
 - Never edit or delete a published video unless the owner asks. Never touch a video while it is being pushed (views climbing fast).
 - Keep facts accurate and assumptions explicit. No guarantees of returns, no specific investment picks.
