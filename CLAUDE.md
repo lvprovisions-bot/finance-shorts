@@ -33,9 +33,12 @@ Known pitfalls: never name a helper `g` (captions loop overwrites it); guard sca
 - One upload per day. Never post two within a few hours.
 
 ## Upload (via Zapier MCP, YouTube app, default connection)
+- Every queued video is a pair: `queue/NN-slug.mp4` + `queue/NN-slug.json` with keys
+  `title`, `description`, `format`, `length_s`, `category_id` ("27").
+- Owner's decision (18 Oct 2026): fully automatic, **public**, one per day, no manual review.
 - Commit + push the MP4 in `queue/` first so the raw URL resolves.
 - `execute_zapier_write_action` YouTube `upload_video` with: `video` = raw URL, `title`, `description`, `category_id` "27",
-  `made_for_kids` "false", `privacy_status` ("private" until the owner switches to auto-publish), `notify_subscribers` "true".
+  `made_for_kids` "false", `privacy_status` "public", `notify_subscribers` "true".
 - Then `git mv queue/x.mp4 published/` is NOT needed — delete the MP4 from `queue/` in a follow-up commit to keep the repo small, and append the log row.
 - Description template: story recap → takeaway line → comment question 👇 → "Follow for more numbers that change how you spend." → ⚠️ assumptions + "This is not financial advice." → 5–7 hashtags ending in #shorts.
 
