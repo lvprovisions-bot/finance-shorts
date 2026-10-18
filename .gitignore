@@ -1,0 +1,10 @@
+.tools/
+__pycache__/
+videos/*/voice.wav
+videos/*/mix.wav
+videos/*/timings.json
+videos/*/video_noaudio.mp4
+videos/*/prev_*.png
+videos/*/chk_*.png
+videos/*/sheet*.png
+videos/*/final_sheet.png
