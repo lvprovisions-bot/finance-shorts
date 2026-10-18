@@ -1,4 +1,4 @@
-.tools/
+.tools
 __pycache__/
 videos/*/voice.wav
 videos/*/mix.wav
