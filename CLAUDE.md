@@ -46,6 +46,13 @@ Known pitfalls: never name a helper `g` (captions loop overwrites it); guard sca
   (The API can't pin comments; that's fine.) Never post more than one comment per video and never comment on other channels.
 - Description template: story recap → takeaway line → comment question 👇 → "Follow for more numbers that change how you spend." → ⚠️ assumptions + "This is not financial advice." → 5–7 hashtags ending in #shorts.
 
+## Long-form videos (weekly test, started 19 Oct 2026)
+- Why: YPP's other route is 4,000 public watch hours/12 months (8,000 for new applicants from 1 Feb 2027); long-form also pays far more per view. Shorts stay at 3/day; a long video takes one of that day's 3 upload slots (the 3-hour guard handles it).
+- Lives in `longform/` (NOT `queue/`; Shorts runs must never upload anything from `longform/`). Folder `videos/LNN-slug/` (copy `L01-rent-vs-buy`: model.py → script.py with {CAPTION|spoken} tokens → tts.py → render.py 1920x1080 scenes → mix.py → meta.py builds title/description with chapter timestamps; endcard_tts.py appends the logo + "watch our Shorts" end card).
+- Topic choice is data-led: real decisions people search for, where SMALL channels (<100k subs) got 100k+ views in the current year (Zapier code action `topic_demand_analysis`). Queue of next topics: Leasing vs financing vs paying cash for a car; Index funds vs ETFs vs mutual funds (explain only, no fund picks).
+- 8–15 min, US data with named official sources on screen and in the description, two cartoon characters + live scoreboard, honest "it depends" ending, comment question.
+- Custom thumbnails need the owner's phone verification (youtube.com/verify) — until then the upload's thumbnail param fails but the video still uploads.
+
 ## Content pillars (styles) — rotate and let the data decide
 Every video belongs to exactly ONE pillar. Each pillar has its own look so the channel feels varied (good for the
 inauthentic-content rule) while each series is instantly recognisable. Put the pillar name in the log's `format` column.
