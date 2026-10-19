@@ -51,7 +51,7 @@ Known pitfalls: never name a helper `g` (captions loop overwrites it); guard sca
 - Lives in `longform/` (NOT `queue/`; Shorts runs must never upload anything from `longform/`). Folder `videos/LNN-slug/` (copy `L01-rent-vs-buy`: model.py → script.py with {CAPTION|spoken} tokens → tts.py → render.py 1920x1080 scenes → mix.py → meta.py builds title/description with chapter timestamps; endcard_tts.py appends the logo + "watch our Shorts" end card).
 - Topic choice is data-led: real decisions people search for, where SMALL channels (<100k subs) got 100k+ views in the current year (Zapier code action `topic_demand_analysis`). Queue of next topics: Leasing vs financing vs paying cash for a car; Index funds vs ETFs vs mutual funds (explain only, no fund picks).
 - 8–15 min, US data with named official sources on screen and in the description, two cartoon characters + live scoreboard, honest "it depends" ending, comment question.
-- Custom thumbnails need the owner's phone verification (youtube.com/verify) — until then the upload's thumbnail param fails but the video still uploads.
+- Custom thumbnails work (phone verified 19 Oct). Upload, then apply with youtube_update_video_thumbnail (1280x720 JPEG, <2MB).
 
 ## Content pillars (styles) — rotate and let the data decide
 Every video belongs to exactly ONE pillar. Each pillar has its own look so the channel feels varied (good for the
@@ -89,10 +89,7 @@ After uploading, add the video to its pillar's playlist (POST /youtube/v3/playli
   headline number contrast, e.g. ["SAME RAISE.", "$283K", "vs $0"]; green for gains, red for losses.
 - Commit it, then try Zapier YouTube "Update Video Thumbnail" (tool_name youtube_update_video_thumbnail) with
   video_id + raw URL `https://raw.githubusercontent.com/lvprovisions-bot/finance-shorts/main/thumbs/NN-slug.jpg`.
-- As of 19 Oct 2026 this FAILS with "doesn't have permissions to upload and set custom video thumbnails"
-  (needs phone verification; Shorts custom thumbnails are rolling out to Partner Program channels first).
-  If it fails with that message, skip quietly (do not raise ACTION NEEDED each time). The weekly review retries
-  all un-applied thumbnails, and should report once if it starts working.
+- WORKS since 19 Oct 2026 (owner verified their phone): apply the thumbnail after every upload. If it ever fails, report it.
 - Custom Shorts thumbnails don't show in the Shorts feed — frame 0 is still the feed "thumbnail", so keep the hook there.
 
 ## Analytics
