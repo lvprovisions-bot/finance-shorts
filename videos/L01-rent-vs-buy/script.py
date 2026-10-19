@@ -131,3 +131,6 @@ SEGMENTS = S
 VOICE = "af_heart"
 LANG = "en-us"
 SPEED = 1.0
+
+# ---------- END CARD (appended with endcard_tts.py; logo + "watch our Shorts") ----------
+SEGMENTS.append(dict(id="e1", scene="endcard", text="Want money maths in under a minute? Watch our Shorts, there's a new one every day. And subscribe to Finance Advised.", pause=7.0, show={}))

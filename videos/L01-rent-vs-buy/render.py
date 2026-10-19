@@ -569,7 +569,32 @@ def sc_outro(c):
         ptext(c, (W / 2, 150), "WHICH TEAM ARE YOU?", F_BLK, 88, YEL, k, stroke=4)
         ptext(c, (W / 2, 250), "Tell me in the comments  ↓", F_BLD, 44, WHITE, k)
 
-SCENES = {"hook": sc_hook, "setup": sc_setup, "rule": sc_rule, "upfront": sc_upfront, "mortgage": sc_mortgage,
+
+ROOT = os.path.dirname(os.path.dirname(HERE))
+_LOGO = Image.open(os.path.join(ROOT, "brand/profile-800.png")).convert("RGB")
+_mask = Image.new("L", _LOGO.size, 0); ImageDraw.Draw(_mask).ellipse([0, 0, _LOGO.size[0] - 1, _LOGO.size[1] - 1], fill=255)
+_SHORTS = [Image.open(os.path.join(ROOT, "thumbs", f)).convert("RGB") for f in ("06-same-raise.jpg", "01-coffee.jpg")]
+def sc_endcard(c):
+    d = c.d; k = ease_back(c.since() / 0.5)
+    sz = int(320 * k)
+    if sz > 10:
+        logo = _LOGO.resize((sz, sz), Image.LANCZOS); m = _mask.resize((sz, sz), Image.LANCZOS)
+        c.img.paste(logo, (int(520 - sz / 2), int(360 - sz / 2)), m)
+    ptext(c, (520, 600), "FINANCE ADVISED", F_BLK, 76, WHITE, k)
+    ptext(c, (520, 670), "Money maths in under a minute", F_MED, 36, GREY, k)
+    if k > 0.3:
+        pill(d, 520, 770, "SUBSCRIBE", font(F_BLK, 44), WHITE, (230, 33, 23), padx=40, h=86)
+    for i, im in enumerate(_SHORTS):
+        kk = ease_back((c.since() - 0.4 - 0.25 * i) / 0.5)
+        if kk < 0.05: continue
+        w, h = int(250 * kk), int(444 * kk); x = 1170 + i * 330; y = 470
+        rrect(d, (x - w / 2 - 14, y - h / 2 - 14, x + w / 2 + 14, y + h / 2 + 14), 36, fill=(20, 20, 26), outline=(90, 100, 120), width=3)
+        c.img.paste(im.resize((w, h), Image.LANCZOS), (int(x - w / 2), int(y - h / 2)))
+    kk = ease_back((c.since() - 0.9) / 0.5)
+    ptext(c, (1335, 160), "WATCH OUR SHORTS", F_BLK, 64, YEL, kk, stroke=3)
+    ptext(c, (1335, 780), "New money maths every day", F_BLD, 36, WHITE, kk)
+
+SCENES = {"endcard": sc_endcard, "hook": sc_hook, "setup": sc_setup, "rule": sc_rule, "upfront": sc_upfront, "mortgage": sc_mortgage,
           "monthly": sc_monthly, "rentup": sc_rentup, "lever": sc_lever, "score": sc_score, "where": sc_where,
           "chart": sc_chart, "twist": sc_twist, "ptr": sc_ptr, "check": sc_check, "outro": sc_outro}
 
@@ -586,7 +611,7 @@ def make_bg(col):
 BGS = {"navy": make_bg((70, 90, 200)), "warm": make_bg((220, 110, 60)), "teal": make_bg((40, 170, 190)), "gold": make_bg((200, 160, 40))}
 SC_BG = {"hook": "navy", "setup": "navy", "rule": "navy", "upfront": "warm", "mortgage": "warm", "monthly": "warm",
          "rentup": "teal", "lever": "warm", "score": "navy", "where": "warm", "chart": "navy", "twist": "gold",
-         "ptr": "teal", "check": "navy", "outro": "navy"}
+         "ptr": "teal", "check": "navy", "outro": "navy", "endcard": "navy"}
 
 # ---------------- captions + UI ----------------
 GROUPS = []
@@ -619,7 +644,7 @@ NUM_SCENES = {"setup", "rule", "upfront", "mortgage", "monthly", "rentup", "leve
 def draw_ui(img, t, run):
     d = ImageDraw.Draw(img)
     ch = chapter_at(t)
-    if ch: pill(d, 40, 48, ch.upper(), font(F_BLD, 26), WHITE, (255, 255, 255, 0) if False else PANEL2, padx=22, h=50, anchor_left=True)
+    if ch and run["scene"] != "endcard": pill(d, 40, 48, ch.upper(), font(F_BLD, 26), WHITE, (255, 255, 255, 0) if False else PANEL2, padx=22, h=50, anchor_left=True)
     # progress bar with chapter ticks
     d.rectangle([0, H - 8, W, H], fill=(30, 36, 54)); d.rectangle([0, H - 8, W * t / TOTAL, H], fill=YEL)
     for st, _ in CHAPS: d.rectangle([W * st / TOTAL - 2, H - 8, W * st / TOTAL + 2, H], fill=BG)
