@@ -41,8 +41,8 @@ Known pitfalls: never name a helper `g` (captions loop overwrites it); guard sca
   `made_for_kids` "false", `privacy_status` "public", `notify_subscribers` "true".
 - Then `git mv queue/x.mp4 published/` is NOT needed — delete the MP4 from `queue/` in a follow-up commit to keep the repo small, and append the log row.
 - After upload, post the channel's own first comment: a short, specific question that invites replies (pick a side,
-  share a number, "go check yours"). Different wording every video. POST https://www.googleapis.com/youtube/v3/commentThreads?part=snippet
-  via youtube_make_api_mutating_request with {"snippet":{"videoId":ID,"topLevelComment":{"snippet":{"textOriginal":TEXT}}}}.
+  share a number, "go check yours"). Different wording every video. POST https://www.googleapis.com/youtube/v3/commentThreads
+  via youtube_make_api_mutating_request with querystring {"part":"snippet"} (putting ?part= in the URL fails with 400 unexpectedPart) and body {"snippet":{"videoId":ID,"topLevelComment":{"snippet":{"textOriginal":TEXT}}}}.
   (The API can't pin comments; that's fine.) Never post more than one comment per video and never comment on other channels.
 - Description template: story recap → takeaway line → comment question 👇 → "Follow for more numbers that change how you spend." → ⚠️ assumptions + "This is not financial advice." → 5–7 hashtags ending in #shorts.
 
