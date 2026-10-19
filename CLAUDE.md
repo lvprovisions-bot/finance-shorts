@@ -30,7 +30,16 @@ Known pitfalls: never name a helper `g` (captions loop overwrites it); guard sca
 - Ending should **loop** back into the opening line; end with a comment question ("Would you be Emma or Jack?").
 - Bright accents on dark backgrounds, huge word-by-word captions (Poppins Bold, yellow active word, green for $ / %).
 - Always show the on-screen assumptions disclaimer while numbers are shown, and put "not financial advice" in the description.
-- Three uploads per day (≈11:50, 16:50, 20:50 UK), at least 3 hours apart. With this volume every video MUST be a clearly different idea and look.
+- From 20 Oct 2026: **two Shorts a day (≈11:50, 20:50 UK)** + long-form Mon/Wed/Fri ≈16:00 UK; max 3 uploads/UK day, ≥3 h apart. Every video MUST be a clearly different idea and look.
+- **Recurring cast (from 20 Oct): Nora & Theo** star in WHO WINS? and THEO EXPLAINS Shorts and in the long videos, so viewers recognise them
+  and follow them from Shorts to long videos. Use the L01 designs (Nora: orange top, brown hair bun; Theo: teal/blue top, short dark hair)
+  but vary poses, props, settings, palettes and layouts every video. Other pillars may use one-off characters.
+  Evidence (19 Oct competitor scan): mascot-led channels win ("Ducky explains Taxes" 5.4M views, 21.7k subs from 19 videos;
+  Mr Planktin 948k subs in 9 months); generic faceless tip channels flop (Capzeno 59 Shorts, median 275 views).
+- **Big universal topics + humour/emotion beat narrow sums.** Prefer taxes, inflation, credit scores, interest, 401(k), insurance, debt.
+- **Titles: under ~50 characters, plain words, max one emoji, NO hashtags in the title** (hashtags go in the description).
+  e.g. "Theo Explains Taxes 😂", "Same Raise. One Is $283K Richer". 
+- **Length test:** alternate 25–35 s and 45–60 s story Shorts; the weekly review decides from stayed-to-watch + avg % viewed.
 
 ## Upload (via Zapier MCP, YouTube app, default connection)
 - Every queued video is a pair: `queue/NN-slug.mp4` + `queue/NN-slug.json` with keys
@@ -62,8 +71,9 @@ inauthentic-content rule) while each series is instantly recognisable. Put the p
 | **WHO WINS?** (proven) | `PLNjse90ClRp4` | Two fictional people, same money, different choices; payoff number reveal | Dark purple/blue gradient, two flat-colour cartoon people, yellow "WHO WINS?" headline, crown on winner | Both characters + "WHO WINS?" + the setup line |
 | **THE REAL COST** | `PLM0WjUq_o4fo` | One everyday spend → what it really costs over years (invested or in interest) | Warm orange/amber, one big object icon (cup, phone, car, card), giant counting-up number | Object + "$X = $BIG" already on screen |
 | **MONEY MYTHS: TRUE OR FALSE?** | `PLbgLGiiAALo8` | Test a popular belief with numbers; show BOTH sides fairly; verdict "it depends / mostly true / mostly false" | Teal/cyan + white, big quiz card with ✅/❌ stamp, split-screen pros/cons | Myth statement in quotes + "TRUE OR FALSE?" |
+| **THEO EXPLAINS** (new 19 Oct) | `PLITIXxANiJ5g` | Theo confidently explains a big money topic (taxes, inflation, APR, credit score, 401k match, insurance deductible) and gets it hilariously wrong; Nora fixes it with one clear example and a number; punchline | Bright, playful: light pastel background that changes per episode, Theo & Nora large on screen, chalkboard/whiteboard prop with the key number, episode badge "THEO EXPLAINS #N" | Theo on screen saying the wrong claim + "THEO EXPLAINS: <TOPIC>" badge |
 | **WOULD YOU RATHER?** | `PLJXCKLMm7Evk` | Two money options that seem obvious; maths reveals the surprise (e.g. $1M now vs a penny doubled daily for 30 days) | Black + bright yellow, A/B split screen, big "A" and "B" buttons, vote-style bars | "WOULD YOU RATHER" + both options on screen |
-| **THEN VS NOW** | `PLZRTd10sBOsc` | What something cost in a past year vs today, and what that means (inflation, wages) | Retro sepia/green "receipt" or price-tag look, two dated cards side by side | Item + "THEN $X / NOW $Y" on screen |
+| ~~THEN VS NOW~~ (PAUSED 19 Oct: slow to source, weakest evidence) | `PLZRTd10sBOsc` | What something cost in a past year vs today, and what that means (inflation, wages) | Retro sepia/green "receipt" or price-tag look, two dated cards side by side | Item + "THEN $X / NOW $Y" on screen |
 
 Rules per pillar:
 - **Myths**: present both sides; never tell viewers what to do; end with "it depends on…" + comment question.
@@ -71,20 +81,19 @@ Rules per pillar:
   (e.g. US BLS CPI/average price data, UK ONS); name the source on screen ("Source: BLS") and in the description.
   If you can't source a number reliably, pick a different item.
 - **Would You Rather**: compute exactly; state assumptions (rates, time) on screen.
-- All pillars: 25–35 s, hook on screen + spoken from frame 0, loop back to the opening line, comment question.
+- All pillars: 25–60 s (see length test), hook on screen + spoken from frame 0, loop back to the opening line, comment question.
 
 **Slot rotation (default — the weekly review may change it):**
-- One WHO WINS? (proven winner) per day, but its slot MOVES each day so time-of-day can be measured fairly:
-  day 1 (20 Oct) 11:50, day 2 16:50, day 3 20:50, then repeat (cycle by UK date: (day-of-year) mod 3 → 0=11:50, 1=16:50, 2=20:50,
-  where 20 Oct 2026 = day-of-year 293 → 293 mod 3 = 2 maps to 11:50; i.e. slot index = (day_of_year - 293) mod 3).
-- The other two slots → rotate through the other pillars in order of whichever was used least recently
-  (check `published/log.csv`), so each test pillar gets ~3–4 videos a week.
-- Timing test: the weekly review compares views/stayed-to-watch by slot (UK 11:50 = 6:50am US East, 16:50 = 11:50am,
-  20:50 = 3:50pm). Need ≥2 weeks before changing times. Never re-upload the same video at another time (duplicate = policy risk).
+- Two Short slots a day (11:50, 20:50 UK). One is WHO WINS? (proven), one rotates THEO EXPLAINS / THE REAL COST / MONEY MYTHS /
+  WOULD YOU RATHER (least recently used first; THEO EXPLAINS gets at least 3 a week while it is new).
+- Timing test: WHO WINS? alternates slots by UK date — even day-of-year → 11:50, odd → 20:50. The weekly review compares
+  slots (11:50 UK = 6:50am US East, 20:50 = 3:50pm). Need ≥2 weeks before changing times. Never re-upload a video at another time.
+- Topical Shorts: when a big scheduled money number is announced (e.g. 2027 401(k)/IRA limits, Fed decision, new tax brackets),
+  the next slot may use it in any pillar, with the official source on screen.
 - Weekly review: a pillar that clearly beats the others (views per video, stayed-to-watch %) gets more slots;
   a pillar that's clearly worst after ≥4 videos is paused and replaced with a new pillar idea.
 
-After uploading, add the video to its pillar's playlist (POST /youtube/v3/playlistItems).
+After uploading, add the video to its pillar's playlist (POST /youtube/v3/playlistItems). Long videos go in `PLTvjRc9qpEts` ("The Money Maths (full videos)").
 
 ## Thumbnails
 - Make one for every video: write `thumbs/NN-slug.json` and run
