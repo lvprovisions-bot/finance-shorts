@@ -8,3 +8,5 @@ videos/*/prev_*.png
 videos/*/chk_*.png
 videos/*/sheet*.png
 videos/*/final_sheet.png
+videos/*/tts.log
+videos/*/thumb.jpg
