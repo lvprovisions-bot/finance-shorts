@@ -8,7 +8,7 @@ channel ID `UCPHtR3_kYJ3tBsAHDARGi6Q`). Every video is fully original: script, A
 - `setup.sh` — run once on a fresh machine. Builds espeak-ng and downloads the Kokoro voice model into `.tools/` (gitignored).
 - `engine/` — templates: `tts_template.py` (voice + per-word timings), `mix_template.py` (music bed, ducking, SFX).
 - `videos/NN-slug/` — one folder per video: `script.py` (SEGMENTS + numbers), `tts.py`, `render.py` (all visuals), `mix.py`.
-  Copy the closest existing folder as a starting point. `04-twins` is the template for story videos.
+  Copy the closest existing folder as a starting point (`06-same-raise` = latest WHO WINS? template), then restyle to the pillar's look.
 - `queue/` — finished MP4s waiting to upload (served publicly at `https://raw.githubusercontent.com/lvprovisions-bot/finance-shorts/main/queue/<file>.mp4`).
 - `published/log.csv` — every upload with its YouTube ID, format and notes. Append a row after each upload.
 
@@ -46,9 +46,47 @@ Known pitfalls: never name a helper `g` (captions loop overwrites it); guard sca
   (The API can't pin comments; that's fine.) Never post more than one comment per video and never comment on other channels.
 - Description template: story recap → takeaway line → comment question 👇 → "Follow for more numbers that change how you spend." → ⚠️ assumptions + "This is not financial advice." → 5–7 hashtags ending in #shorts.
 
-## Series playlist
-- "Money Math: Who Wins? 💸" — playlist ID `PLNjse90ClRp4`. Add every new upload to it (Zapier YouTube "Add Video to Playlist",
-  or POST /youtube/v3/playlistItems via youtube_make_api_mutating_request). Playlists keep viewers watching the next Short.
+## Content pillars (styles) — rotate and let the data decide
+Every video belongs to exactly ONE pillar. Each pillar has its own look so the channel feels varied (good for the
+inauthentic-content rule) while each series is instantly recognisable. Put the pillar name in the log's `format` column.
+
+| Pillar | Playlist ID | Idea | Look (must follow) | Hook pattern (frame 0) |
+|---|---|---|---|---|
+| **WHO WINS?** (proven) | `PLNjse90ClRp4` | Two fictional people, same money, different choices; payoff number reveal | Dark purple/blue gradient, two flat-colour cartoon people, yellow "WHO WINS?" headline, crown on winner | Both characters + "WHO WINS?" + the setup line |
+| **THE REAL COST** | `PLM0WjUq_o4fo` | One everyday spend → what it really costs over years (invested or in interest) | Warm orange/amber, one big object icon (cup, phone, car, card), giant counting-up number | Object + "$X = $BIG" already on screen |
+| **MONEY MYTHS: TRUE OR FALSE?** | `PLbgLGiiAALo8` | Test a popular belief with numbers; show BOTH sides fairly; verdict "it depends / mostly true / mostly false" | Teal/cyan + white, big quiz card with ✅/❌ stamp, split-screen pros/cons | Myth statement in quotes + "TRUE OR FALSE?" |
+| **WOULD YOU RATHER?** | `PLJXCKLMm7Evk` | Two money options that seem obvious; maths reveals the surprise (e.g. $1M now vs a penny doubled daily for 30 days) | Black + bright yellow, A/B split screen, big "A" and "B" buttons, vote-style bars | "WOULD YOU RATHER" + both options on screen |
+| **THEN VS NOW** | `PLZRTd10sBOsc` | What something cost in a past year vs today, and what that means (inflation, wages) | Retro sepia/green "receipt" or price-tag look, two dated cards side by side | Item + "THEN $X / NOW $Y" on screen |
+
+Rules per pillar:
+- **Myths**: present both sides; never tell viewers what to do; end with "it depends on…" + comment question.
+- **Then vs Now**: every historical figure must come from an official/reputable source found with web search
+  (e.g. US BLS CPI/average price data, UK ONS); name the source on screen ("Source: BLS") and in the description.
+  If you can't source a number reliably, pick a different item.
+- **Would You Rather**: compute exactly; state assumptions (rates, time) on screen.
+- All pillars: 25–35 s, hook on screen + spoken from frame 0, loop back to the opening line, comment question.
+
+**Slot rotation (default — the weekly review may change it):**
+- 11:50 slot → WHO WINS? (proven winner).
+- 16:50 and 20:50 slots → rotate through the other four pillars in order of whichever was used least recently
+  (check `published/log.csv`), so each test pillar gets ~3–4 videos a week.
+- Weekly review: a pillar that clearly beats the others (views per video, stayed-to-watch %) gets more slots;
+  a pillar that's clearly worst after ≥4 videos is paused and replaced with a new pillar idea.
+
+After uploading, add the video to its pillar's playlist (POST /youtube/v3/playlistItems).
+
+## Thumbnails
+- Make one for every video: write `thumbs/NN-slug.json` and run
+  `python3 engine/thumbnail.py queue/NN-slug.mp4 thumbs/NN-slug.json thumbs/NN-slug.jpg`.
+  Spec: `tag` = pillar name with the pillar's accent colour; 2–3 SHORT lines (max ~12 chars each) — the
+  headline number contrast, e.g. ["SAME RAISE.", "$283K", "vs $0"]; green for gains, red for losses.
+- Commit it, then try Zapier YouTube "Update Video Thumbnail" (tool_name youtube_update_video_thumbnail) with
+  video_id + raw URL `https://raw.githubusercontent.com/lvprovisions-bot/finance-shorts/main/thumbs/NN-slug.jpg`.
+- As of 19 Oct 2026 this FAILS with "doesn't have permissions to upload and set custom video thumbnails"
+  (needs phone verification; Shorts custom thumbnails are rolling out to Partner Program channels first).
+  If it fails with that message, skip quietly (do not raise ACTION NEEDED each time). The weekly review retries
+  all un-applied thumbnails, and should report once if it starts working.
+- Custom Shorts thumbnails don't show in the Shorts feed — frame 0 is still the feed "thumbnail", so keep the hook there.
 
 ## Analytics
 Saved Zapier skill **"channel rundown"** pulls channel totals, per-video stats and YouTube Analytics
