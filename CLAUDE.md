@@ -74,9 +74,13 @@ Rules per pillar:
 - All pillars: 25–35 s, hook on screen + spoken from frame 0, loop back to the opening line, comment question.
 
 **Slot rotation (default — the weekly review may change it):**
-- 11:50 slot → WHO WINS? (proven winner).
-- 16:50 and 20:50 slots → rotate through the other four pillars in order of whichever was used least recently
+- One WHO WINS? (proven winner) per day, but its slot MOVES each day so time-of-day can be measured fairly:
+  day 1 (20 Oct) 11:50, day 2 16:50, day 3 20:50, then repeat (cycle by UK date: (day-of-year) mod 3 → 0=11:50, 1=16:50, 2=20:50,
+  where 20 Oct 2026 = day-of-year 293 → 293 mod 3 = 2 maps to 11:50; i.e. slot index = (day_of_year - 293) mod 3).
+- The other two slots → rotate through the other pillars in order of whichever was used least recently
   (check `published/log.csv`), so each test pillar gets ~3–4 videos a week.
+- Timing test: the weekly review compares views/stayed-to-watch by slot (UK 11:50 = 6:50am US East, 16:50 = 11:50am,
+  20:50 = 3:50pm). Need ≥2 weeks before changing times. Never re-upload the same video at another time (duplicate = policy risk).
 - Weekly review: a pillar that clearly beats the others (views per video, stayed-to-watch %) gets more slots;
   a pillar that's clearly worst after ≥4 videos is paused and replaced with a new pillar idea.
 
