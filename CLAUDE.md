@@ -30,12 +30,12 @@ Known pitfalls: never name a helper `g` (captions loop overwrites it); guard sca
 - Ending should **loop** back into the opening line; end with a comment question ("Would you be Emma or Jack?").
 - Bright accents on dark backgrounds, huge word-by-word captions (Poppins Bold, yellow active word, green for $ / %).
 - Always show the on-screen assumptions disclaimer while numbers are shown, and put "not financial advice" in the description.
-- One upload per day. Never post two within a few hours.
+- Three uploads per day (≈11:50, 16:50, 20:50 UK), at least 3 hours apart. With this volume every video MUST be a clearly different idea and look.
 
 ## Upload (via Zapier MCP, YouTube app, default connection)
 - Every queued video is a pair: `queue/NN-slug.mp4` + `queue/NN-slug.json` with keys
   `title`, `description`, `format`, `length_s`, `category_id` ("27").
-- Owner's decision (18 Oct 2026): fully automatic, **public**, one per day, no manual review.
+- Owner's decision (18-19 Oct 2026): fully automatic, **public**, three per day, no manual review.
 - Commit + push the MP4 in `queue/` first so the raw URL resolves.
 - `execute_zapier_write_action` YouTube `upload_video` with: `video` = raw URL, `title`, `description`, `category_id` "27",
   `made_for_kids` "false", `privacy_status` "public", `notify_subscribers` "true".
@@ -67,7 +67,7 @@ Goal: stay eligible for YPP. Policy checked Oct 2026:
 - AI disclosure: the generic TTS narrator over cartoon graphics needs no "altered or synthetic" label. If a video ever uses
   photorealistic AI imagery, a realistic human voice clone, or generative-AI music, set the altered/synthetic disclosure.
 - Never buy views/subscribers, use engagement pods, or delete-and-reupload to game the algorithm.
-- Max one upload per day.
+- Max three uploads per UK calendar day, at least 3 hours apart, one per run.
 - Thresholds (for context in reports): YPP = 1,000 subs + 10M Shorts views/90 days (or 4,000 watch hours/yr);
   from 1 Feb 2027 new applicants need 20M Shorts views/90 days (or 8,000 hours/yr). Fan-funding tier = 500 subs,
   3 uploads in 90 days, 3M Shorts views/90 days.
