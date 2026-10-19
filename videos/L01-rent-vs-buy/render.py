@@ -342,7 +342,7 @@ def sc_rentup(c):
         k = ease_out(c.rv(2) / 0.8); y = B - (B - T) * 2313 / mx
         d.line([(L, y), (lerp(L, R, k), y)], fill=NORA, width=12)
         if k > 0.6:
-            pill(d, 560, y - 70, "Nora's mortgage: $2,313 for all 30 years", font(F_BLD, 34), (20, 20, 20), NORA)
+            pill(d, 1180, y + 70, "Nora's mortgage: $2,313 for all 30 years", font(F_BLD, 34), (20, 20, 20), NORA)
 
 def sc_lever(c):
     d = c.d
