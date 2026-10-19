@@ -10,7 +10,7 @@ channel ID `UCPHtR3_kYJ3tBsAHDARGi6Q`). Every video is fully original: script, A
 - `videos/NN-slug/` — one folder per video: `script.py` (SEGMENTS + numbers), `tts.py`, `render.py` (all visuals), `mix.py`.
   Copy the closest existing folder as a starting point (`06-same-raise` = latest WHO WINS? template), then restyle to the pillar's look.
 - `queue/` — finished MP4s waiting to upload (served publicly at `https://raw.githubusercontent.com/lvprovisions-bot/finance-shorts/main/queue/<file>.mp4`).
-- `published/log.csv` — every upload with its YouTube ID, format and notes. Append a row after each upload.
+- `published/log.csv` — every upload with its YouTube ID, pillar (`format`) and notes. Append rows with Python's csv module (titles contain commas — always quote).
 
 ## Pipeline for one video
 1. `./setup.sh` (skip if `.tools/` exists).
