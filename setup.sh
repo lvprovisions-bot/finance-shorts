@@ -12,6 +12,10 @@ fi
 B=https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0
 [ -f voices-v1.0.bin ] || curl -sSL -o voices-v1.0.bin "$B/voices-v1.0.bin"
 [ -f kokoro-v1.0.int8.onnx ] || curl -sSL -o kokoro-v1.0.int8.onnx "$B/kokoro-v1.0.int8.onnx"
+if [ ! -d asr/sherpa-onnx-moonshine-tiny-en-int8 ]; then   # offline ASR for the owner's narration (engine/human_voice.py)
+  mkdir -p asr && curl -sSL -o asr/m.tar.bz2 https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-moonshine-tiny-en-int8.tar.bz2 \
+    && tar xjf asr/m.tar.bz2 -C asr && rm asr/m.tar.bz2
+fi
 python3 -c "import onnxruntime, numpy, scipy, PIL" || pip install --break-system-packages -q onnxruntime numpy scipy pillow
 command -v ffmpeg >/dev/null || { echo "ffmpeg missing"; exit 1; }
 echo "setup ok"
