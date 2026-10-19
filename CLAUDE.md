@@ -55,12 +55,31 @@ Known pitfalls: never name a helper `g` (captions loop overwrites it); guard sca
   (The API can't pin comments; that's fine.) Never post more than one comment per video and never comment on other channels.
 - Description template: story recap → takeaway line → comment question 👇 → "Follow for more numbers that change how you spend." → ⚠️ assumptions + "This is not financial advice." → 5–7 hashtags ending in #shorts.
 
-## Long-form videos (weekly test, started 19 Oct 2026)
-- Why: YPP's other route is 4,000 public watch hours/12 months (8,000 for new applicants from 1 Feb 2027); long-form also pays far more per view. Shorts stay at 3/day; a long video takes one of that day's 3 upload slots (the 3-hour guard handles it).
-- Lives in `longform/` (NOT `queue/`; Shorts runs must never upload anything from `longform/`). Folder `videos/LNN-slug/` (copy `L01-rent-vs-buy`: model.py → script.py with {CAPTION|spoken} tokens → tts.py → render.py 1920x1080 scenes → mix.py → meta.py builds title/description with chapter timestamps; endcard_tts.py appends the logo + "watch our Shorts" end card).
-- Topic choice is data-led: real decisions people search for, where SMALL channels (<100k subs) got 100k+ views in the current year (Zapier code action `topic_demand_analysis`). Queue of next topics: Leasing vs financing vs paying cash for a car; Index funds vs ETFs vs mutual funds (explain only, no fund picks).
-- 8–15 min, US data with named official sources on screen and in the description, two cartoon characters + live scoreboard, honest "it depends" ending, comment question.
-- Custom thumbnails work (phone verified 19 Oct). Upload, then apply with youtube_update_video_thumbnail (1280x720 JPEG, <2MB).
+## Long-form videos (from 19 Oct 2026: 3 a week, NARRATED BY THE OWNER)
+- Why: YPP's other route is 4,000 public watch hours/12 months; joining before **1 Feb 2027** keeps the old bar
+  (8,000 h / 20M Shorts views for new applicants after that). From Feb 2027 Shorts only pay at 10M Shorts views/90 days,
+  so long-form is the main money route. A human narrator is the strongest signal against the inauthentic-content policy.
+- Schedule: Mon/Wed/Fri ≈15:45 UK (10:45am US East). Max 3 uploads/UK day overall, ≥3 h apart (Shorts at 11:50 and 20:50).
+- Weekly flow:
+  1. **Sunday task** ("Finance Advised: weekly long-video scripts") picks 3 data-backed topics, builds `videos/LNN-slug/`
+     (model.py with sourced numbers → script.py with {CAPTION|spoken} tokens, short sentences written for a British narrator
+     with a mild lisp: avoid dense "s" clusters) and puts a numbered recording script for each into the Drive folder
+     **Finance Advised – voice** (`1KAU41CZ6pobXjmogT-Q_fHeO3DVo6_Vu`, channel account) as a Google Doc, then reports the links.
+  2. The owner records each script as a phone voice memo and **sends it in the main Claude chat** (Drive downloads are not
+     reachable from the build container, so recordings arrive as chat attachments).
+  3. In that chat: `python3 engine/human_voice.py <memo> videos/LNN-slug` (clean-up + offline ASR + retake-aware matching →
+     voice.wav + timings.json; exit 3 = paragraphs missing/unclear → ask the owner to re-record those numbers), then render.py,
+     mix.py, mux to `longform/LNN-slug.mp4`, meta.py, thumb.py → `thumbs/LNN-slug.jpg`, upload at the next Mon/Wed/Fri slot.
+- Template: `videos/L02-lease-finance-cash` (owner voice; scenes.py style) or `L01-rent-vs-buy` (AI voice).
+- Lives in `longform/` (NOT `queue/`; Shorts runs must never upload anything from `longform/`). Raw-URL upload, then thumbnail
+  with youtube_update_video_thumbnail, playlist `PLTvjRc9qpEts`, seed comment, log row (format "LONG: ..."), delete the MP4.
+- Topic choice is data-led: real decisions people search for, where SMALL channels (<100k subs) got 100k+ views this year
+  (Zapier code action `topic_demand_analysis`). Topic queue: Savings account vs investing now rates are 4%+; Pay off your
+  mortgage or invest?; Index funds vs ETFs vs mutual funds (explain only, no fund picks); 401(k) vs Roth IRA; Student loans
+  after the SAVE plan; Is buy-now-pay-later a trap? (Black Friday 27 Nov); HSA vs FSA (open enrollment).
+- 8–12 min, US data with named official sources on screen and in the description, Nora & Theo (+ guest), live scoreboard,
+  honest "it depends" ending, comment question, logo + "watch our Shorts" end card (no narration on the end card).
+- Custom thumbnails work (phone verified 19 Oct): 1280x720 JPEG, <2MB.
 
 ## Content pillars (styles) — rotate and let the data decide
 Every video belongs to exactly ONE pillar. Each pillar has its own look so the channel feels varied (good for the
@@ -117,7 +136,7 @@ Goal: stay eligible for YPP. Policy checked Oct 2026:
   **lacking a narrative arc**. So every video must:
   - have a real story/argument with a beginning, twist and payoff (two-character stories are ideal);
   - be a **genuinely new idea** — never re-skin a previous video with swapped numbers;
-  - **vary the look**: rotate background palette, character designs/names, chart types and scene layouts so consecutive
+  - **vary the look**: rotate background palette, character designs/names (except the recurring Nora & Theo), chart types and scene layouts so consecutive
     uploads don't look like one template (check the last 3 videos in `published/log.csv` before designing);
   - vary titles/description wording (no copy-paste boilerplate beyond the disclaimer).
 - **No AI personas of real people**, and no fake "expert" presenter giving finance advice. Characters are clearly fictional
