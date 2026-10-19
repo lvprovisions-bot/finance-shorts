@@ -203,13 +203,13 @@ def act_sam(img, t):
     if t > th - 0.1:
         u = ease_out((t - th + 0.1) / 0.4)
         d.rounded_rectangle([L, y0, L + max(60, (xm - L) * u), y1], radius=30, fill=ORANGE)
-        if u > 0.7:
+        if u > 0.97:
             text_c(d, ((L + xm) / 2, (y0 + y1) / 2), "$250 ENJOY", font(F_NUM, 50), BG)
     if t > ti - 0.1:
         u = ease_out((t - ti + 0.1) / 0.4)
         d.rounded_rectangle([xm, y0, xm + max(60, (R - xm) * u), y1], radius=30, fill=GREEN)
         d.rectangle([xm, y0, xm + 30, y1], fill=GREEN)
-        if u > 0.7:
+        if u > 0.97:
             text_c(d, ((xm + R) / 2, (y0 + y1) / 2), "$250 INVEST", font(F_NUM, 50), BG)
 
 def chart_years(t):
@@ -308,7 +308,7 @@ def draw_ui(img, t):
     ld.rounded_rectangle([W / 2 - pw / 2, 175, W / 2 + pw / 2, 245], radius=35, fill=(255, 255, 255, 28), outline=(255, 255, 255, 200), width=3)
     img.alpha_composite(lay); d = ImageDraw.Draw(img)
     text_c(d, (W / 2, 211), label, f, WHITE)
-    if seg_start("grow") <= t < seg_end("fin") + 0.3:
+    if True:  # disclaimer on screen whenever numbers are shown (whole video)
         text_c(d, (W / 2, 1520), "Illustration only. Assumes a 7% average yearly return,", font(F_MED, 28), (125, 135, 140))
         text_c(d, (W / 2, 1558), "which is not guaranteed. Not financial advice.", font(F_MED, 28), (125, 135, 140))
 
