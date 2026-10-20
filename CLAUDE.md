@@ -25,21 +25,24 @@ Known pitfalls: never name a helper `g` (captions loop overwrites it); guard sca
 
 ## What works (update this as data comes in)
 - **Two-character "who wins?" stories beat single calculations by ~10–20x** (04-twins). Default to this format.
-- Target **25–35 seconds** (viewers left around 28–30 s of ~50 s videos).
+- Target **21–35 seconds** (viewers left around 28–30 s of ~50 s videos). **Avoid 36–60 s**: worst length band in all 4 competitor groups (20 Oct audit, 24 channels).
+- First sentence = the joke, conflict or number. No set-up line before it.
 - Hook must be **on screen and spoken from frame 0** (characters + "WHO WINS?" visible instantly, no pop-in, voice starts immediately).
 - Ending should **loop** back into the opening line; end with a comment question ("Would you be Emma or Jack?").
 - Bright accents on dark backgrounds, huge word-by-word captions (Poppins Bold, yellow active word, green for $ / %).
 - Always show the on-screen assumptions disclaimer while numbers are shown, and put "not financial advice" in the description.
 - From 20 Oct 2026: **two Shorts a day (≈11:50, 20:50 UK)** + long-form Mon/Wed/Fri ≈16:00 UK; max 3 uploads/UK day, ≥3 h apart. Every video MUST be a clearly different idea and look.
+- **UK test (from 21 Oct):** 2 of every 6 Shorts use £ and UK topics (only processed analytics: 100% UK viewers). Verify UK figures on GOV.UK.
+- Audit doc with the 30-idea list and 30/90-day plan: https://claude.ai/code/artifact/3cc71a53-f65d-4a3d-af31-1c075518df07
 - **Recurring cast (from 20 Oct): Nora & Theo** star in WHO WINS? and THEO EXPLAINS Shorts and in the long videos, so viewers recognise them
   and follow them from Shorts to long videos. Use the L01 designs (Nora: orange top, brown hair bun; Theo: teal/blue top, short dark hair)
   but vary poses, props, settings, palettes and layouts every video. Other pillars may use one-off characters.
   Evidence (19 Oct competitor scan): mascot-led channels win ("Ducky explains Taxes" 5.4M views, 21.7k subs from 19 videos;
   Mr Planktin 948k subs in 9 months); generic faceless tip channels flop (Capzeno 59 Shorts, median 275 views).
 - **Big universal topics + humour/emotion beat narrow sums.** Prefer taxes, inflation, credit scores, interest, 401(k), insurance, debt.
-- **Titles: under ~50 characters, plain words, max one emoji, NO hashtags in the title** (hashtags go in the description).
+- **Titles: under ~50 characters, plain words, max one emoji**. Hashtags in titles are allowed (no penalty in the 20 Oct audit data); "how/why/what" openers and the character's name did slightly better.
   e.g. "Theo Explains Taxes 😂", "Same Raise. One Is $283K Richer". 
-- **Length test:** alternate 25–35 s and 45–60 s story Shorts; the weekly review decides from stayed-to-watch + avg % viewed.
+- **Length test (from 21 Oct):** alternate 21–35 s and 61–90 s story Shorts (never 36–60 s); the weekly review decides from stayed-to-watch + avg % viewed.
 
 ## Upload (via Zapier MCP, YouTube app, default connection)
 - Every queued video is a pair: `queue/NN-slug.mp4` + `queue/NN-slug.json` with keys
