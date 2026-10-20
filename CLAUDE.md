@@ -73,6 +73,10 @@ Known pitfalls: never name a helper `g` (captions loop overwrites it); guard sca
   3. In that chat: `python3 engine/human_voice.py <memo> videos/LNN-slug` (clean-up + offline ASR + retake-aware matching →
      voice.wav + timings.json; exit 3 = paragraphs missing/unclear → ask the owner to re-record those numbers), then render.py,
      mix.py, mux to `longform/LNN-slug.mp4`, meta.py, thumb.py → `thumbs/LNN-slug.jpg`, upload at the next Mon/Wed/Fri slot.
+- **Deadline plan (20 Oct):** https://claude.ai/code/artifact/b9442d9e-0748-478b-bf91-9073e200cebd — goal 1,000 subs + 4,000 eligible h, apply by 25 Jan 2027.
+  Only long-form earns eligible hours. Long-video topics: prefer expanding a Short that beat the channel median (first: investing at 25 vs 35,
+  from the twins Short), searchable "X or Y?" titles, payoff number in the first 15 s. Every long video gets a 21–35 s teaser Short within 24 h
+  (WHO WINS?/THEO EXPLAINS look, ends "full breakdown on the channel"); the owner sets its Related video in Studio.
 - Template: `videos/L02-lease-finance-cash` (owner voice; scenes.py style) or `L01-rent-vs-buy` (AI voice).
 - Lives in `longform/` (NOT `queue/`; Shorts runs must never upload anything from `longform/`). Raw-URL upload, then thumbnail
   with youtube_update_video_thumbnail, playlist `PLTvjRc9qpEts`, seed comment, log row (format "LONG: ..."), delete the MP4.
