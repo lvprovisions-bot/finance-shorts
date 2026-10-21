@@ -24,6 +24,12 @@ channel ID `UCPHtR3_kYJ3tBsAHDARGi6Q`). Every video is fully original: script, A
 Known pitfalls: never name a helper `g` (captions loop overwrites it); guard scale→0 in drawing helpers; font size must be ≥2.
 
 ## What works (update this as data comes in)
+- **2-WEEK TEST (22 Oct – 4 Nov 2026), overrides the schedule/rotation below:** ONE Short a day at ≈18:50 UK. Only two pillars:
+  WHO WINS? (Nora vs Theo story) and THEO EXPLAINS, alternating. 21–35 s, never longer. The first spoken sentence must be the
+  conflict, joke or number itself (no set-up). Spend the time saved on quality: rewrite the first line 3 times and pick the strongest,
+  and check frame 0 reads in under a second. No UK test, no other pillars, no long videos unless the owner sends a recording.
+  Why: 17–21 Oct Shorts after the first spike got 0–23 views; stayed-to-watch 26–45%. Verdict on 4 Nov (scheduled task):
+  continue only if ≥2 test Shorts pass 1,000 views or median stayed-to-watch ≥50%.
 - **Two-character "who wins?" stories beat single calculations by ~10–20x** (04-twins). Default to this format.
 - Target **21–35 seconds** (viewers left around 28–30 s of ~50 s videos). **Avoid 36–60 s**: worst length band in all 4 competitor groups (20 Oct audit, 24 channels).
 - First sentence = the joke, conflict or number. No set-up line before it.
