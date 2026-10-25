@@ -30,7 +30,16 @@ Known pitfalls: never name a helper `g` (captions loop overwrites it); guard sca
   and check frame 0 reads in under a second. No UK test, no other pillars, no long videos unless the owner sends a recording.
   Why: 17–21 Oct Shorts after the first spike got 0–23 views; stayed-to-watch 26–45%. Verdict on 4 Nov (scheduled task):
   continue only if ≥2 test Shorts pass 1,000 views or median stayed-to-watch ≥50%.
-- **Two-character "who wins?" stories beat single calculations by ~10–20x** (04-twins). Default to this format.
+- **Weekly review 25 Oct 2026 (analytics processed to 22 Oct; small samples, n=1–4 per group):**
+  - Channel: 1 sub, 1,704 lifetime views; long-form eligible watch time ≈0.1 h (L01: 8 views, 5 min). Needed pace by 27 Oct: 73 subs / 289 h.
+    **The bottleneck is long-form supply, not Shorts:** only 1 long video exists; L02 (owner voice) is still unrecorded.
+  - Shorts reach collapsed after the 18 Oct spike: daily views 1,210 → 163 → 147 → 38 → 37 (18–22 Oct). Shorts since 19 Oct: median 24 views.
+  - Best since 19 Oct: **07 Theo tax brackets (128 views, 70% avg viewed, 42% stayed)** — biggest universal topic (taxes) + Theo's wrong claim.
+    WHO WINS? since 19 Oct: 23 / 8 / 12 / 25 views. So "WHO WINS? beats everything 10–20x" was ONE video (04-twins) and is NOT holding; treat as a hypothesis.
+  - Hypothesis (not proven): topic size matters more than pillar — taxes and "invest early" did best; savings rates, ISA, credit myth did worst.
+  - Shorts → long: ~0 long-video views from Shorts (2 RELATED_VIDEO views). Related-video links must be set in Studio by the owner.
+  - Subs per 1,000 views: Shorts ≈0.6; long-form 0 (n=8 views).
+- **Two-character "who wins?" stories beat single calculations by ~10–20x** (04-twins, 18 Oct). Not repeated by WHO WINS? #2–#4 (8–25 views); keep in the 2-week test, but re-judge on 4 Nov.
 - Target **21–35 seconds** (viewers left around 28–30 s of ~50 s videos). **Avoid 36–60 s**: worst length band in all 4 competitor groups (20 Oct audit, 24 channels).
 - First sentence = the joke, conflict or number. No set-up line before it.
 - Hook must be **on screen and spoken from frame 0** (characters + "WHO WINS?" visible instantly, no pop-in, voice starts immediately).
@@ -49,6 +58,13 @@ Known pitfalls: never name a helper `g` (captions loop overwrites it); guard sca
 - **Titles: under ~50 characters, plain words, max one emoji**. Hashtags in titles are allowed (no penalty in the 20 Oct audit data); "how/why/what" openers and the character's name did slightly better.
   e.g. "Theo Explains Taxes 😂", "Same Raise. One Is $283K Richer". 
 - **Length test (from 21 Oct):** alternate 21–35 s and 61–90 s story Shorts (never 36–60 s); the weekly review decides from stayed-to-watch + avg % viewed.
+
+## Next week's topic ideas (from 25 Oct review — long-form first, each with a 21–35 s teaser Short)
+1. **L02 Lease vs finance vs cash** (script ready, waiting on the owner's recording). Teaser: WHO WINS? "Same car, three ways to pay".
+2. **L03 Investing at 25 vs 35: who ends up richer?** (expands 04-twins, the channel's best Short, 798 views). Teaser: WHO WINS? Nora at 25 vs Theo at 35.
+3. **L04 Can a raise ever lower your take-home pay? Tax brackets explained** (expands 07, best Short since 19 Oct). Teaser: THEO EXPLAINS #4 "marginal rate".
+4. Backup long: **HSA vs FSA** (open enrollment, ends mid-Dec). Teaser: THEO EXPLAINS "use-it-or-lose-it".
+Shorts in the 2-week test should favour the big topics above (taxes, investing early, 401(k)) over narrow ones (savings-rate, ISA, myths).
 
 ## Upload (via Zapier MCP, YouTube app, default connection)
 - Every queued video is a pair: `queue/NN-slug.mp4` + `queue/NN-slug.json` with keys
