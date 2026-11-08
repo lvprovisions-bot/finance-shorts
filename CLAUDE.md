@@ -24,7 +24,22 @@ channel ID `UCPHtR3_kYJ3tBsAHDARGi6Q`). Every video is fully original: script, A
 Known pitfalls: never name a helper `g` (captions loop overwrites it); guard scale→0 in drawing helpers; font size must be ≥2.
 
 ## What works (update this as data comes in)
-- **2-WEEK TEST (22 Oct – 4 Nov 2026), overrides the schedule/rotation below:** ONE Short a day at ≈18:50 UK. Only two pillars:
+- **CURRENT SHORTS RULE (from 8 Nov review, overrides the slot rotation below):** ONE Short a day at ≈18:50 UK, 21–35 s, same quality
+  rules as the 2-week test (first line = the claim/number, 3 drafts, frame 0 readable in <1 s). Pillar mix: **THEO EXPLAINS 2 days of
+  every 3, WHO WINS? 1 of 3** (e.g. Theo, Theo, WHO WINS?). THEO topic = Theo's confident wrong version of a maths fact everyone
+  half-knows (percent changes, compounding, brackets) with ONE striking number in the first line. No other pillars, no UK test.
+  Why: THEO median 27 vs WHO WINS? 12 lifetime views since 22 Oct (n=9 vs 8); the three Theo maths-misconception Shorts are the
+  only test-era videos above 100 views (07 128, 17 121, 27 113 in its first 15 h). Two-a-day (20–21 Oct) did not lift reach either.
+- **Weekly review 8 Nov 2026 (analytics processed to 5 Nov; directional samples):**
+  - **2-week test verdict: FAILED both criteria** (0 of 14 test Shorts reached 1,000 views, max 121; median stayed-to-watch ≈18%,
+    needed ≥50%). Not recorded on 4 Nov, so recorded here. One-a-day did not restore reach; daily views 30 Oct–5 Nov: 25/20/50/15/6/11/14.
+  - Channel: still 1 sub, 2,040 lifetime views, 28 videos (27 Shorts + L01). Shorts subs per 1,000 views ≈0.5; long-form 0 (10 views).
+  - Long-form: still only L01 (10 views, ~5 min ≈0.1 h); **no long video in 20 days** because none is recorded. Needed by 10 Nov:
+    217 subs / 866 h → behind by 216 subs and ~866 h. Gate 2 (1 Dec: ≥300 h, ≥150 subs) cannot be met without long videos.
+  - THEO EXPLAINS "average return" (25, 14 views) did NOT repeat 17's result, so the angle alone isn't enough; 27 (compounding, 113)
+    did. Hypothesis: the first line needs one big, concrete, surprising number ("$31K" vs "$76K"), not a percentage puzzle.
+  - Shorts → long views: still 2 lifetime (RELATED_VIDEO). Shorts views from YouTube search: 61 lifetime (3%) — small but non-zero.
+- **2-WEEK TEST (22 Oct – 4 Nov 2026), ENDED — see verdict above:** ONE Short a day at ≈18:50 UK. Only two pillars:
   WHO WINS? (Nora vs Theo story) and THEO EXPLAINS, alternating. 21–35 s, never longer. The first spoken sentence must be the
   conflict, joke or number itself (no set-up). Spend the time saved on quality: rewrite the first line 3 times and pick the strongest,
   and check frame 0 reads in under a second. No UK test, no other pillars, no long videos unless the owner sends a recording.
@@ -69,13 +84,16 @@ Known pitfalls: never name a helper `g` (captions loop overwrites it); guard sca
   e.g. "Theo Explains Taxes 😂", "Same Raise. One Is $283K Richer". 
 - **Length test (from 21 Oct):** alternate 21–35 s and 61–90 s story Shorts (never 36–60 s); the weekly review decides from stayed-to-watch + avg % viewed.
 
-## Next week's topic ideas (from 1 Nov review — long-form first, each with a 21–35 s teaser Short; Gate 1 applies)
-1. **L02 Lease vs finance vs cash** (script ready since 20 Oct, still waiting on the owner's recording). Teaser: WHO WINS? "Same car, three ways to pay" (different angle from 20-car-term).
-2. **L04 Can a raise ever lower your take-home pay? Tax brackets explained** (expands 07, best THEO Short). Teaser: THEO EXPLAINS "marginal rate" (new example, not a re-skin of 07).
-3. **L05 Lose 50%, gain 50%: why "average returns" lie** (expands 17, 121 views / 67% viewed). Teaser: THEO EXPLAINS "my fund averaged 10%" (average vs actual return).
-4. Backup long: **L03 Investing at 25 vs 35** (expands 04-twins, 798 views). Teaser: WHO WINS? Nora at 25 vs Theo at 35.
+## Next week's topic ideas (from 8 Nov review — long-form first, each with a 21–35 s teaser Short; Gate 1 applies)
+Long-form is blocked on recordings (none received since 20 Oct). Build scripts only for topics the owner will record; Shorts go on daily.
+1. **L06 What $10K becomes in 30 years — compound vs simple growth** (expands 27-theo-snowball, 113 views in 15 h, best start since 17).
+   Teaser: THEO EXPLAINS "Rule of 72" — Theo thinks 7% doubles money in 72 years (it's ≈10.2; compute exactly).
+2. **L04 Can a raise ever lower your take-home pay? Tax brackets explained** (expands 07 + 21). Teaser: THEO EXPLAINS "my bonus is
+   taxed at 40%" (22% federal supplemental withholding vs what is actually owed at filing; new angle, not a re-skin of 07/21).
+3. **L05 Lose 50%, gain 50%: why "average returns" lie** (expands 17; teaser 25 already shipped, 14 views — make the next teaser lead with a dollar loss, not a percent).
+4. **L02 Lease vs finance vs cash** (script ready since 20 Oct, still unrecorded). Teaser: WHO WINS? "Same car, three ways to pay".
+Topical WHO WINS? for the 1-in-3 slot: buy-now-pay-later before Black Friday (27 Nov), source CFPB on screen.
 Gate 1 title/thumbnail change for the next two long videos: question titles naming the surprise number ("Can a Raise Cut Your Pay?"), Theo's face + one big number on the thumbnail, payoff number in the first 15 s.
-Remaining test days (2–4 Nov) keep the alternation; from 5 Nov the verdict task decides, and the data so far favours THEO EXPLAINS over WHO WINS?.
 
 ## Upload (via Zapier MCP, YouTube app, default connection)
 - Every queued video is a pair: `queue/NN-slug.mp4` + `queue/NN-slug.json` with keys
