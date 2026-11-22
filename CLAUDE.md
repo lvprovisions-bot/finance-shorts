@@ -30,6 +30,9 @@ Known pitfalls: never name a helper `g` (captions loop overwrites it); guard sca
   half-knows (percent changes, compounding, brackets) with ONE striking number in the first line. No other pillars, no UK test.
   Why: THEO median 27 vs WHO WINS? 12 lifetime views since 22 Oct (n=9 vs 8); the three Theo maths-misconception Shorts are the
   only test-era videos above 100 views (07 128, 17 121, 27 113 in its first 15 h). Two-a-day (20–21 Oct) did not lift reach either.
+- **Weekly review 22 Nov 2026: NO DATA (2nd week).** First YouTube API call via Zapier failed again: "Your Zapier account has
+  reached its task limit for the current billing period." No uploads since 8 Nov (≈14 missed). Gate 2 (1 Dec) will be missed;
+  recommendation logged in the Deadline Plan doc: adopt the post-February plan now. Rules and topic list below unchanged.
 - **Weekly review 15 Nov 2026: NO DATA.** Zapier task limit for the billing period (first hit 8 Nov after 28's playlist add) blocks
   every YouTube API call, so no analytics, no uploads since 8 Nov (≈7 missed Shorts), and 28 still lacks its seed comment + thumbnail.
   No new findings; the 8 Nov rules stand unchanged. Before any upload run, expect the Zapier quota error: if it appears, stop and report
@@ -89,7 +92,7 @@ Known pitfalls: never name a helper `g` (captions loop overwrites it); guard sca
   e.g. "Theo Explains Taxes 😂", "Same Raise. One Is $283K Richer". 
 - **Length test (from 21 Oct):** alternate 21–35 s and 61–90 s story Shorts (never 36–60 s); the weekly review decides from stayed-to-watch + avg % viewed.
 
-## Next week's topic ideas (carried over unchanged on 15 Nov — none were made because uploads were blocked; from 8 Nov review — long-form first, each with a 21–35 s teaser Short; Gate 1 applies)
+## Next week's topic ideas (carried over unchanged on 15 and 22 Nov — none were made because uploads were blocked; from 8 Nov review — long-form first, each with a 21–35 s teaser Short; Gate 1 applies)
 Long-form is blocked on recordings (none received since 20 Oct). Build scripts only for topics the owner will record; Shorts go on daily.
 1. **L06 What $10K becomes in 30 years — compound vs simple growth** (expands 27-theo-snowball, 113 views in 15 h, best start since 17).
    Teaser: THEO EXPLAINS "Rule of 72" — Theo thinks 7% doubles money in 72 years (it's ≈10.2; compute exactly).
